@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matthew Oluwanifemi — CV</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #0f1724;
+      --muted: #6b7280;
+      --accent: #7c3aed;
+      --card: #f8fafc;
+    }
+
+    /* Page layout */
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      line-height:1.45;
+      color:var(--text);
+      background:var(--bg);
+      padding:28px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{
+      max-width:820px;
+      margin:0 auto;
+      background:linear-gradient(180deg,#fff,#fbfcfd);
+      padding:28px 36px;
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(12,20,30,0.06);
+      border:1px solid rgba(15,23,36,0.04);
+    }
+
+    /* Header */
+    header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+    .header-left{max-width:70%}
+    .name{font-size:26px;font-weight:700;letter-spacing:0.2px}
+    .role{color:var(--muted);margin-top:6px;font-weight:600}
+    .contact{font-size:13px;color:var(--muted);margin-top:8px}
+    .contact a{color:var(--accent);text-decoration:none}
+    .meta{font-size:12px;color:var(--muted);text-align:right}
+
+    /* Sections */
+    section{margin-top:18px}
+    h2{margin:8px 0 10px;font-size:13px;color:var(--muted);letter-spacing:0.6px;text-transform:uppercase}
+    p{margin:0}
+
+    /* Skills badges */
+    ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 0;list-style:none}
+    ul.skills li{background:var(--card);padding:8px 10px;border-radius:8px;font-size:13px;color:var(--text);border:1px solid rgba(15,23,36,0.04)}
+
+    /* Projects */
+    .projects .project{margin-bottom:12px;padding:12px;border-radius:8px;background:linear-gradient(180deg, #ffffff, #fcfdff);border:1px solid rgba(15,23,36,0.03)}
+    .projects .project strong{display:block}
+    .projects a{color:var(--accent);text-decoration:none}
+
+    /* Experience list */
+    ul{margin:6px 0 0;padding-left:18px}
+
+    /* Buttons */
+    .btn{display:inline-block;background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px}
+    .btn:hover{filter:brightness(0.95)}
+
+    /* Footer (no-print) */
+    .no-print{margin-top:22px;display:flex;gap:8px;align-items:center}
+
+    /* Small screens */
+    @media (max-width:720px){
+      .container{padding:18px}
+      header{flex-direction:column;align-items:flex-start}
+      .meta{text-align:left;margin-top:8px}
+    }
+
+    /* Print-friendly adjustments */
+    @media print{
+      body{padding:10mm;background:white}
+      .container{box-shadow:none;border:none;border-radius:0;padding:0}
+      .no-print{display:none}
+      a{color:inherit;text-decoration:underline}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="name">Matthew Oluwanifemi</div>
+        <div class="role">Frontend Developer</div>
+        <div class="contact">Nigeria • <a href="mailto:matthewoluwanifemi9@gmail.com">matthewoluwanifemi9@gmail.com</a></div>
+        <div class="contact"><a href="https://github.com/WumingdevGit">github.com/WumingdevGit</a> • <a href="https://www.linkedin.com/in/matthew-oluwanifemi-6aa360303">linkedin.com/in/matthew-oluwanifemi-6aa360303</a></div>
+      </div>
+      <div class="meta">Last updated: 2025</div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>Frontend developer specializing in building responsive, accessible, and high-performance user interfaces. Experienced with modern JavaScript, React, and CSS — I turn designs into production-ready sites and prioritize usability and maintainability.</p>
+    </section>
+
+    <section>
+      <h2>Key skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (ES6+)</li>
+        <li>React</li>
+        <li>Responsive Design</li>
+        <li>Accessibility (WCAG)</li>
+        <li>Git</li>
+        <li>Web Performance</li>
+      </ul>
+    </section>
+
+    <section class="projects">
+      <h2>Selected projects</h2>
+      <div class="project">
+        <strong>Discover Sudan — Tour Agency Web App</strong>
+        <div class="muted">A responsive marketing and booking UI. Tech: HTML, CSS, JavaScript.</div>
+        <div><a href="https://github.com/WumingdevGit/tour-agency">github.com/WumingdevGit/tour-agency</a></div>
+      </div>
+
+      <div class="project">
+        <strong>Real Estate Property Management Website</strong>
+        <div class="muted">Filters, responsive layouts and image galleries. Tech: JavaScript, CSS.</div>
+        <div><a href="https://github.com/WumingdevGit/real-estate-webpage">github.com/WumingdevGit/real-estate-webpage</a></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div>
+        <strong>Freelance Frontend Developer</strong>
+        <div class="muted">Dates: Freelance</div>
+        <ul>
+          <li>Delivered client websites focused on responsive design and performance.</li>
+          <li>Improved load times and accessibility where applicable.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div>
+        <strong>Nigerian Army University Biu</strong>
+        <div class="muted">B.Sc, 4 years</div>
+        <div class="muted">Course: Software Engineering</div>
+      </div>
+    </section>
+
+    <footer class="no-print" style="margin-top:22px;display:flex;gap:8px;align-items:center">
+      <a class="btn" href="portfolio_index.html">Back to portfolio</a>
+      <a class="btn" id="downloadPdf" href="assets/CV_Matthew_Oluwanifemi.pdf" download>Download PDF</a>
+    </footer>
+  </div>
+</body>
+</html>
