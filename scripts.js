@@ -2,12 +2,12 @@ const projects = [
   {
     title: 'Discover Sudan — Tour Agency Web App',
     desc: 'A modern and visually appealing tour agency web application designed to showcase travel destinations across Sudan. Features clean layouts, responsive UI, and user-friendly navigation — ideal for promoting tours, packages, and customer experiences.',
-    link: 'https://github.com/WumingdevGit/tour-agency'
+    link: 'https://wumingdevgit.github.io/tour-agency/'
   },
   {
     title: 'Real Estate Property Management Website',
     desc: 'A functional real estate management platform where users can browse properties and apply multiple filters using JavaScript. Includes sorting by property type, price, and location, responsive layouts, and image galleries for a professional listings experience.',
-    link: 'https://github.com/WumingdevGit/real-estate-webpage'
+    link: 'https://wumingdevgit.github.io/real-estate-webpage/'
   }
 ];
 
