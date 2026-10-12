@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matthew Oluwanifemi – CV</title>
+  <meta name="description" content="CV of Matthew Oluwanifemi, frontend developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#eef0f6;
+      --paper:#ffffff;
+      --ink:#14172b;
+      --ink-2:#444a63;
+      --muted:#6d7390;
+      --rule:#e3e6f0;
+      --side:#f5f6fb;
+      --accent:#4338ca;
+      --accent-soft:#e9e8fb;
+      --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+      --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        --bg:#0d0f1c;
+        --paper:#151830;
+        --ink:#f1f2fa;
+        --ink-2:#c3c7de;
+        --muted:#9097b8;
+        --rule:#262a4a;
+        --side:#1a1e3a;
+        --accent:#a5a0ff;
+        --accent-soft:#2a2c5c;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      padding:40px 20px;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--body);
+      font-size:15px;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--accent);text-decoration:none;text-underline-offset:3px}
+    a:hover{text-decoration:underline}
+    a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+    p{margin:0}
+    ul{margin:0;padding:0;list-style:none}
+
+    .sheet{
+      max-width:960px;
+      margin:0 auto;
+      background:var(--paper);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 30px 60px -30px rgba(20,23,43,.35);
+    }
+
+    /* Masthead */
+    .masthead{
+      padding:48px 48px 36px;
+      border-bottom:1px solid var(--rule);
+    }
+    .name{
+      margin:0;
+      font-family:var(--display);
+      font-weight:800;
+      font-size:clamp(2.4rem,6vw,3.8rem);
+      line-height:1;
+      letter-spacing:-.035em;
+    }
+    .role{
+      margin-top:12px;
+      font-size:1.15rem;
+      font-weight:500;
+      color:var(--accent);
+    }
+    .intro{
+      margin-top:20px;
+      max-width:62ch;
+      color:var(--ink-2);
+      font-size:1.02rem;
+    }
+
+    /* Two columns */
+    .body{display:grid;grid-template-columns:280px 1fr}
+    .side{
+      background:var(--side);
+      padding:36px 32px 40px 48px;
+      border-right:1px solid var(--rule);
+    }
+    .main{padding:36px 48px 40px 40px}
+
+    h2{
+      margin:0 0 14px;
+      font-family:var(--display);
+      font-weight:600;
+      font-size:1.2rem;
+      letter-spacing:-.01em;
+    }
+    .block + .block{margin-top:32px}
+
+    /* Sidebar */
+    .contact li + li{margin-top:10px}
+    .contact span{display:block;font-size:.82rem;color:var(--muted)}
+    .contact a,.contact b{font-weight:500;word-break:break-word}
+    .contact b{color:var(--ink)}
+
+    .skill-group + .skill-group{margin-top:16px}
+    .skill-group h3{margin:0 0 6px;font-size:.88rem;font-weight:600;color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chips li{
+      padding:3px 10px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--ink);
+      font-size:.85rem;
+      font-weight:500;
+    }
+
+    .edu strong{display:block;font-weight:600}
+    .edu span{display:block;color:var(--ink-2);font-size:.92rem}
+
+    /* Main */
+    .project + .project,.job{margin-top:0}
+    .project{
+      padding:18px 0;
+      border-top:1px solid var(--rule);
+    }
+    .project:first-of-type{border-top:0;padding-top:0}
+    .project h3,.job h3{
+      margin:0;
+      font-size:1.05rem;
+      font-weight:600;
+    }
+    .project p{margin-top:4px;color:var(--ink-2)}
+    .links{margin-top:8px;display:flex;gap:18px;font-weight:600;font-size:.92rem}
+
+    .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .job-head time{font-size:.9rem;color:var(--muted);font-weight:500}
+    .job ul{margin-top:8px}
+    .job li{position:relative;padding-left:18px;color:var(--ink-2)}
+    .job li + li{margin-top:4px}
+    .job li::before{
+      content:"";
+      position:absolute;left:0;top:.7em;
+      width:8px;height:2px;background:var(--accent);
+    }
+
+    /* Actions */
+    .actions{
+      display:flex;gap:10px;flex-wrap:wrap;
+      padding:20px 48px 32px;
+      border-top:1px solid var(--rule);
+    }
+    .btn{
+      display:inline-flex;align-items:center;
+      padding:10px 18px;
+      border-radius:10px;
+      font:600 .92rem var(--body);
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform .15s ease, background-color .15s ease;
+    }
+    .btn:hover{text-decoration:none;transform:translateY(-1px)}
+    .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent)}
+    @media (prefers-color-scheme:dark){.btn-primary{color:#14172b}}
+    .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
+    .btn-ghost:hover{background:var(--side)}
+    .updated{margin-left:auto;align-self:center;font-size:.85rem;color:var(--muted)}
+
+    @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+
+    /* Tablet and phone */
+    @media (max-width:760px){
+      body{padding:14px 10px}
+      .sheet{border-radius:14px}
+      .masthead{padding:32px 24px 26px}
+      .body{grid-template-columns:1fr}
+      .side{border-right:0;border-bottom:1px solid var(--rule);padding:28px 24px}
+      .main{padding:28px 24px}
+      .actions{padding:20px 24px 28px}
+      .updated{margin-left:0;width:100%}
+    }
+
+    /* Print: clean A4, light colours only */
+    @media print{
+      :root{
+        --bg:#fff;--paper:#fff;--ink:#14172b;--ink-2:#333852;--muted:#5b617d;
+        --rule:#d9dcea;--side:#f3f4fa;--accent:#4338ca;--accent-soft:#e9e8fb;
+      }
+      @page{size:A4;margin:0}
+      body{padding:0;background:#fff;font-size:12.5px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .sheet{max-width:none;border-radius:0;box-shadow:none}
+      .masthead{padding:30px 36px 22px}
+      .side{padding:24px 24px 24px 36px}
+      .main{padding:24px 36px 24px 28px}
+      .body{grid-template-columns:240px 1fr}
+      .actions{display:none}
+      .project,.job,.block{break-inside:avoid}
+      .btn-primary{color:#fff}
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="masthead">
+      <h1 class="name">Matthew Oluwanifemi</h1>
+      <p class="role">Frontend developer</p>
+      <p class="intro">I build responsive, accessible and fast user interfaces with React and modern JavaScript. I turn designs into production-ready sites that are easy to use and easy to maintain.</p>
+    </header>
+
+    <div class="body">
+      <aside class="side">
+        <section class="block">
+          <h2>Contact</h2>
+          <ul class="contact">
+            <li><span>Location</span><b>Nigeria</b></li>
+            <li><span>Email</span><a href="mailto:matthewoluwanifemi9@gmail.com">matthewoluwanifemi9@gmail.com</a></li>
+            <li><span>GitHub</span><a href="https://github.com/WumingdevGit">github.com/WumingdevGit</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/matthew-oluwanifemi-6aa360303">matthew-oluwanifemi</a></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>Skills</h2>
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <ul class="chips">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript (ES6+)</li>
+              <li>TypeScript</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Frameworks and tools</h3>
+            <ul class="chips">
+              <li>React</li>
+              <li>Tailwind CSS</li>
+              <li>Vite</li>
+              <li>Framer Motion</li>
+              <li>Git and GitHub</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Practice</h3>
+            <ul class="chips">
+              <li>Responsive design</li>
+              <li>Accessibility (WCAG)</li>
+              <li>Web performance</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="block edu">
+          <h2>Education</h2>
+          <strong>B.Sc. Software Engineering</strong>
+          <span>Nigerian Army University, Biu</span>
+          <span>2024</span>
+        </section>
+      </aside>
+
+      <div class="main">
+        <section class="block">
+          <h2>Selected projects</h2>
+
+          <article class="project">
+            <h3>Discover Sudan: Tour Agency Web App</h3>
+            <p>A responsive marketing and booking interface that showcases travel destinations across Sudan. Built with HTML, CSS and JavaScript.</p>
+            <div class="links">
+              <a href="https://wumingdevgit.github.io/tour-agency/">View live site</a>
+              <a href="https://github.com/WumingdevGit/tour-agency">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Real Estate Property Management Website</h3>
+            <p>A listings platform where visitors filter and sort properties by type, price and location, with responsive layouts and image galleries. Built with JavaScript and CSS.</p>
+            <div class="links">
+              <a href="https://wumingdevgit.github.io/real-estate-webpage/">View live site</a>
+              <a href="https://github.com/WumingdevGit/real-estate-webpage">GitHub</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="block">
+          <h2>Experience</h2>
+          <article class="job">
+            <div class="job-head">
+              <h3>Freelance frontend developer</h3>
+              <time>2025 to present</time>
+            </div>
+            <ul>
+              <li>Delivered client websites focused on responsive design and performance.</li>
+              <li>Improved load times and accessibility where applicable.</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </div>
+
+    <footer class="actions">
+      <a class="btn btn-ghost" href="/">Back to portfolio</a>
+      <a class="btn btn-primary" id="downloadPdf" href="/assets/CV_Matthew_Oluwanifemi.pdf" download>Download PDF</a>
+      <span class="updated">Last updated October 2026</span>
+    </footer>
+  </main>
+
+  <script>
+    // Download PDF: use the PDF file if it exists, otherwise open the print dialog
+    // (choose "Save as PDF" as the destination).
+    document.getElementById("downloadPdf").addEventListener("click", function (e) {
+      e.preventDefault();
+      var link = this;
+      fetch(link.href, { method: "HEAD" })
+        .then(function (res) {
+          var type = res.headers.get("content-type") || "";
+          if (res.ok && type.indexOf("pdf") !== -1) {
+            var a = document.createElement("a");
+            a.href = link.href;
+            a.download = "CV_Matthew_Oluwanifemi.pdf";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+          } else {
+            window.print();
+          }
+        })
+        .catch(function () { window.print(); });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f2ede3;
+  --color-paper-2: #e8e1d3;
+  --color-ink: #14110d;
+  --color-ink-2: #35302a;
+  --color-muted: #6a6154;
+  --color-rule: #c9c0ae;
+  --color-indigo: #1f3d63;
+  --color-vermilion: #bf3a17;
+
+  --font-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
+  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+/* Night press — the same dossier printed as a negative.
+   Unlayered, so it wins over the @theme values on :root. */
+.dark {
+  --color-paper: #14120e;
+  --color-paper-2: #1d1a15;
+  --color-ink: #f0e9dc;
+  --color-ink-2: #cfc6b4;
+  --color-muted: #9a8f7c;
+  --color-rule: #3a342a;
+  --color-indigo: #86aedd;
+  --color-vermilion: #e86a3e;
+}
+
+/* Grain reads as ink tooth in light mode, as emulsion in dark mode. */
+.dark body::after {
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+
+/* Time-limited crossfade while the mode is flipping (removed after 600ms). */
+.theme-anim *,
+.theme-anim *::before,
+.theme-anim *::after {
+  transition:
+    background-color 500ms ease,
+    border-color 500ms ease,
+    color 500ms ease,
+    fill 500ms ease,
+    stroke 500ms ease !important;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    /* clip (not hidden) so position: sticky keeps working */
+    overflow-x: clip;
+  }
+
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* uncoated stock: fine grain over the whole sheet */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background: var(--color-indigo);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-vermilion);
+    outline-offset: 3px;
+  }
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
